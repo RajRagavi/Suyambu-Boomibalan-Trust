@@ -74,9 +74,9 @@ const Home = () => {
         </div>
       </div>
       {/* About Section */}
-      <div className="bg-white shadow-2xl sm:rounded-3xl m-15 p-16 px-6 sm:px-16 md:pt-24 lg:pt-0 lg:px-24 flex flex-col lg:flex-row items-center justify-around lg:items-start gap-8 lg:gap-x-20">     <div 
+      <div className="bg-gray-300  shadow-2xl sm:rounded-3xl m-15 p-16 px-6 sm:px-16 md:pt-24 lg:pt-0 lg:px-24 flex flex-col lg:flex-row items-center justify-around lg:items-start gap-8 lg:gap-x-20">     <div 
                         data-aos="fade-right"
-                        className="lg:w-[650px] text-center lg:text-left">
+                        className="lg:w-[650px] text-center lg:text-left pt-15">
                             <h2 className="text-black lg:text-2xl font-bold mb-4">
                             Sri Suyambu Boomibalan Trust
                             </h2>
@@ -97,7 +97,7 @@ const Home = () => {
                         </div>
                         <div 
                         data-aos="fade-left"
-                        className="lg:w-1/3 flex justify-center">
+                        className="lg:w-1/3 flex justify-center pt-15">
                             <img
                                 src={Boomibalagan_Temple}
                                 alt=""
@@ -107,10 +107,10 @@ const Home = () => {
                             />
                         </div>
       </div>
-      <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 bg-gray-100 shadow-lg rounded-lg ">
+      <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 bg-gray-300 shadow-lg rounded-lg ">
         <h2 
         data-aos="fade-up"
-        className='font-bold text-2xl py-2 text-center text-yellow-500'>Our Services</h2>
+        className='font-bold text-2xl py-2 text-center text-black'>Our Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* Card 1 */}
         <motion.div
@@ -168,9 +168,9 @@ const Home = () => {
           
           </div>
       </div>
-      <div className='mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 bg-gray-100 mt-5 rounded-lg '>
+      <div className='mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 mb-5 bg-gray-300 mt-5 rounded-lg '>
         <h2 className='text-center font-bold text-2xl text-yellow-500 '>Get Involved</h2>
-        <p className='text-center text-base text-white'>We believe that temple restoration and humanitarian service go hand in hand. You can support our mission in several ways</p>
+        <p className='text-center text-base text-black'>We believe that temple restoration and humanitarian service go hand in hand. You can support our mission in several ways</p>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4'>
           {/* Card 1 */}
           <motion.div

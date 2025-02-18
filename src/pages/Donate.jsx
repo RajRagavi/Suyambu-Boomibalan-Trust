@@ -6,6 +6,7 @@ function Donate() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
 
   // Function to toggle form visibility
   const toggleForm = (type) => {
@@ -168,6 +169,14 @@ function Donate() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+              />
+              <textarea
+                type="text"
+                className="w-full p-2 border rounded-md mb-3"
+                placeholder="Address..."
+                required
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
               />
               <button
                 type="submit"

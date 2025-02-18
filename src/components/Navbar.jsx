@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Our Story', href: '/ourstory' },
   { name: 'Current Projects', href: '/current-projects' },
   { name: 'Temple Science', href: '/temple-science' },
-  { name: 'Blogs', href: '/blogs' },
+  // { name: 'Blogs', href: '/blogs' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -23,7 +23,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white fixed w-full top-0 left-0 z-50 shadow-md">
+    <header className="bg-white  fixed w-full top-0 left-0 z-50 shadow-md">
       <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
         {/* Logo and Trust Name */}
         <a href="#" className="flex items-center gap-3">
@@ -34,12 +34,14 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-8 ">
           {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-md font-medium text-back-800 hover:text-yellow-500 transition-all duration-300"
+              className="relative text-md font-medium text-gray-800 hover:text-yellow-500 transition-all duration-300 
+               after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 
+               after:transition-all after:duration-300 hover:after:w-full "
             >
               {item.name}
             </a>
@@ -91,7 +93,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#"
+              href="/donate"
               className="block text-md font-semibold text-white bg-red-500 hover:bg-yellow-500 px-4 py-2 rounded-lg text-center transition-all duration-300"
             >
               Donate Now
