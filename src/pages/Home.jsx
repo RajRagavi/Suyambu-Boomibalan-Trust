@@ -4,9 +4,9 @@ import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { FaAndroid} from 'react-icons/fa';
 
+import BoomibalaganTrust from '../assets/images/SriSuyambuBoomibalaganTrust.mp4'
 
 
-import Boomibalagan from '../assets/images/Boomibalagan.jpg'
 import Tradition from '../assets/icon/Tradition.png'
 import Hindu from '../assets/icon/Hindu.png'
 import Vedic from '../assets/icon/Vedic.png'
@@ -68,14 +68,12 @@ const Home = () => {
    <div className="relative isolate px-6 pt-14 lg:px-8 w-full">
       
       {/* Background Image */}
-      <motion.img
-        src={Boomibalagan}
-        alt="Trust Banner"
-        className="absolute inset-0 w-full h-full object-cover -z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      />
+      <motion.video autoPlay loop muted controls className="absolute inset-0 w-full h-full object-cover -z-10">
+  <source src={BoomibalaganTrust} type="video/mp4" />
+  Your browser does not support the video tag.
+</motion.video>
+
+
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 h-full"></div>
@@ -111,7 +109,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-<section className="bg-[#0B1120] py-12">
+<section className="bg-[#FFF8DC] py-12">
   <div className="container mx-auto px-6">
     <motion.div
       className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
@@ -141,10 +139,25 @@ const Home = () => {
   </div>
 </section>
 
-
+<section className="project_bg text-black py-16 px-6">
+            <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    CURRENT PROJECTS
+                </h2>
+                <p className="text-lg text-white leading-relaxed mb-6">
+                At Sri Suyambu Boomibalagan Trust, we are committed to preserving India’s ancient spiritual heritage through meaningful projects. Our efforts focus on temple restoration, Vedic education, and community welfare, ensuring that traditions continue to thrive for future generations.<br /> With the support of devotees, volunteers, and donors, we renovate historic temples, conduct scriptural teachings, and provide healthcare, education, and essential aid to underprivileged communities. Every project reflects our dedication to Dharma Seva and the well-being of society.
+                   
+                </p>
+                <button className="bg-black text-white font-semibold px-6 py-3 rounded-lg transition hover:text-red-600 hover:bg-white">
+                  <a href="/current-projects"> Learn More</a> 
+                </button>
+            </div>
+        </section>
      <Services />
+    
 
-     <section className="bg text-white py-16 px-6">
+
+     <section className="bg text-black py-16 px-6">
             <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold textbrand mb-6">
                     OUR STORY
@@ -153,8 +166,7 @@ const Home = () => {
                 At Sri Suyambu Boomibalagan Trust, we believe in Dharma Seva - serving society through spiritual, cultural and humanitarian efforts. Our mission to preserve temple traditions while also uplifting communities through various charitable initiatives.<br /> With the support of generous donors, volunteers and devotees, we continue to expand our efforts in temple restoration, religious services, education, healthcare and social welfare
                    
                 </p>
-                <button className="learnbutton text-gray-900 font-semibold px-6 py-3 rounded-lg transition">
-                  <a href="/ourstory"> Learn More</a> 
+                <button className="bg-black text-white font-semibold px-6 py-3 rounded-lg transition hover:text-red-600 hover:bg-yellow-400">  <a href="/ourstory"> Learn More</a> 
                 </button>
             </div>
         </section>

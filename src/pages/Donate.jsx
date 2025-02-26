@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { HandHeart, Landmark, Users, Music } from "lucide-react";
 
+import QRcode from '../assets/images/qr-code.jpeg';
+
 function Donate() {
   const [formType, setFormType] = useState(null);
   const [name, setName] = useState("");
@@ -51,7 +53,7 @@ function Donate() {
   return (
     <div className="bg-gray-100 py-12">
       {/* Header */}
-      <div className="text-center py-12 bg-yellow-500 text-white pt-26">
+      <div className="text-center py-12 bg-[#FF9933] text-white pt-26">
         <h1 className="text-3xl font-bold" data-aos="fade-up">Donate</h1>
         <p className="mt-2 text-lg" data-aos="fade-up" data-aos-delay="200">
           Will you help preserve India's ancient temples?
@@ -89,7 +91,7 @@ function Donate() {
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={() => toggleForm("donate")}
-              className="px-6 py-3 rounded-md shadow-md font-semibold bg-yellow-500 text-gray-900 hover:bg-yellow-600"
+              className="px-6 py-3 rounded-md shadow-md font-semibold bg-[#FF9933] text-white"
             >
               Donate Now
             </button>
@@ -105,17 +107,18 @@ function Donate() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 bg-gray-100 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-black">Bank Transfer</h3>
-            <p className="mt-2 text-gray-600">Account Name: Sri Suyambu Boomibalan Trust</p>
-            <p className="text-gray-600">Bank: [Bank Name]</p>
-            <p className="text-gray-600">Account Number: [XXXX XXXX XXXX]</p>
-            <p className="text-gray-600">IFSC Code: [IFSCXXXX]</p>
+            <p className="mt-2 text-gray-600">Account Name: SRI SUYAMBU BOOMIBALAN TRUST</p>
+            <p className="text-gray-600">Account Number: 098902000000764</p>
+            <p className="text-gray-600">IFSC Code:IOBA0000989</p>
+            <p className="text-gray-600">BRANCH CODE : 0989</p>
+            <p className="text-gray-600">BRANCH NAME: PURATHAKUDI, INDIAN OVERSEAS BANK</p>
           </div>
 
           <div className="p-6 bg-gray-100 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-black">UPI / QR Code</h3>
             <p className="mt-2 text-gray-600">Scan the QR code to donate instantly.</p>
             <img
-              src="/qr-code.png"
+              src={QRcode}
               alt="Scan to Donate via UPI"
               className="w-40 mx-auto mt-4 border border-gray-300 rounded-lg"
             />

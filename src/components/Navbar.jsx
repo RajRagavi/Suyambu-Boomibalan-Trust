@@ -23,12 +23,12 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-gray-900  fixed w-full top-0 left-0 z-50 shadow-md">
+    <header className="bg  fixed w-full top-0 left-0 z-50 shadow-md">
       <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
         {/* Logo and Trust Name */}
         <a href="#" className="flex items-center gap-3">
-          {/* <img src={SuyambuBoomibalanTrustLogo} alt="Trust Logo" className="w-16 md:w-20" /> */}
-          <h1 className="text-xl md:text-base font-bold text-white uppercase">
+          <img src={SuyambuBoomibalanTrustLogo} alt="Trust Logo" className="w-16 md:w-20" />
+          <h1 className="text-xl md:text-base font-bold text-black uppercase">
             Sri Suyambu Boomibalan Trust
           </h1>
         </a>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="relative text-lg font-medium text-white hover:text-yellow-500 transition-all duration-300 
+              className="relative text-lg font-medium text-black hover:text-yellow-500 transition-all duration-300 
                after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-orange-500 
                after:transition-all after:duration-300 hover:after:w-full "
             >
