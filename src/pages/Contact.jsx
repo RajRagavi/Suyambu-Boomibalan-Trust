@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -6,6 +6,41 @@ const Contact = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    let tempErrors = {};
+    if (!formData.name.trim()) tempErrors.name = "Name is required";
+    if (!formData.email.trim()) tempErrors.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      tempErrors.email = "Invalid email format";
+    if (!formData.subject.trim()) tempErrors.subject = "Subject is required";
+    if (!formData.message.trim()) tempErrors.message = "Message is required";
+
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      console.log("Form submitted successfully", formData);
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 pt-20">
@@ -25,39 +60,32 @@ const Contact = () => {
           <h2 className="text-xl font-semibold text-yellow-500 mb-4">
             Send Us a Message
           </h2>
-          <form className="space-y-4">
-            <div>
-              <label className="text-gray-600 font-medium">Name</label>
-              <input
-                type="text"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div>
-              <label className="text-gray-600 font-medium">Email</label>
-              <input
-                type="email"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div>
-              <label className="text-gray-600 font-medium">Subject</label>
-              <input
-                type="text"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                placeholder="Enter subject"
-              />
-            </div>
-            <div>
-              <label className="text-gray-600 font-medium">Message</label>
-              <textarea
-                rows="4"
-                className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                placeholder="Write your message here..."
-              ></textarea>
-            </div>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            {Object.keys(formData).map((field) => (
+              <div key={field}>
+                <label className="text-gray-600 font-medium capitalize">{field}</label>
+                {field !== "message" ? (
+                  <input
+                    type={field === "email" ? "email" : "text"}
+                    name={field}
+                    value={formData[field]}
+                    onChange={handleChange}
+                    className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    placeholder={`Enter your ${field}`}
+                  />
+                ) : (
+                  <textarea
+                    name={field}
+                    value={formData[field]}
+                    onChange={handleChange}
+                    rows="4"
+                    className="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    placeholder="Write your message here..."
+                  ></textarea>
+                )}
+                {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
+              </div>
+            ))}
             <button className="w-full bg-yellow-500 text-white py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-300">
               Send Message
             </button>
