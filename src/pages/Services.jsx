@@ -42,9 +42,9 @@ const Services = () => {
         <img src={service.image} alt={service.title} className="w-full h-56 object-cover" />
         <div className="p-6 text-center">
           <h3 className="text-lg font-bold text-black">{service.title}</h3>
-          <button className="mt-4 px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700">
+          {/* <button className="mt-4 px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700">
             Learn More
-          </button>
+          </button> */}
         </div>
       </div>
     ))}
@@ -62,9 +62,9 @@ const Services = () => {
         <img src={service.image} alt={service.title} className="w-full h-56 object-cover" />
         <div className="p-6 text-center">
           <h3 className="text-lg font-bold text-black">{service.title}</h3>
-          <button className="mt-4 px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700">
+          {/* <button className="mt-4 px-6 py-2 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700">
             Learn More
-          </button>
+          </button> */}
         </div>
       </div>
     ))}

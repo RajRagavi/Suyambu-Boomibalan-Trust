@@ -121,19 +121,19 @@ const Home = () => {
       {/* Icon 1 */}
       <motion.div className="flex flex-col items-center" variants={iconVariants}>
         <img src={Tradition} className="w-16 h-16 mb-4" />
-        <h3 className="text-white text-lg font-semibold">Protect Hindu Tradition</h3>
+        <h3 className="text-black text-lg font-semibold">Protect Hindu Tradition</h3>
       </motion.div>
 
       {/* Icon 2 */}
       <motion.div className="flex flex-col items-center" variants={iconVariants}>
         <img src={Hindu} className="w-16 h-16 mb-4" />
-        <h3 className="text-white text-lg font-semibold">Preserve Hindu Temples</h3>
+        <h3 className="text-black text-lg font-semibold">Preserve Hindu Temples</h3>
       </motion.div>
 
       {/* Icon 3 */}
       <motion.div className="flex flex-col items-center" variants={iconVariants}>
         <img src={Vedic} className="w-16 h-16 mb-4" />
-        <h3 className="text-white text-lg font-semibold">Ensure Vedic Science well preserved</h3>
+        <h3 className="text-black text-lg font-semibold">Ensure Vedic Science well preserved</h3>
       </motion.div>
     </motion.div>
   </div>
@@ -186,7 +186,7 @@ const Home = () => {
             <motion.button
         type="submit"
         className="shadow-xl text-lg bg-gray-900 text-white px-4 py-2 rounded-full border-2 hover:text-red-600 hover:bg-white transition-all"
-        onClick={toggleFormVisibility} 
+        onClick={() => (window.location.href = "tel:+919655667705")}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ y: -10, opacity: 0 }}
@@ -208,7 +208,7 @@ const Home = () => {
             <motion.button
         type="submit"
         className="shadow-xl text-lg bg-gray-900 text-white px-4 py-2 rounded-full border-2 hover:text-red-600 hover:bg-white transition-all"
-        onClick={toggleFormVisibility} 
+        onClick={() => (window.location.href = "tel:+919655667705")}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ y: -10, opacity: 0 }}
@@ -229,7 +229,7 @@ const Home = () => {
             <motion.button
         type="submit"
         className="shadow-xl text-lg bg-gray-900 text-white px-4 py-2 rounded-full border-2 hover:text-red-600 hover:bg-white transition-all"
-        onClick={toggleFormVisibility} 
+        onClick={() => (window.location.href = "tel:+919655667705")}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ y: -10, opacity: 0 }}

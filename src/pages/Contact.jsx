@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import emailjs from "emailjs-com";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -15,6 +16,7 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
 
   const validate = () => {
     let tempErrors = {};
@@ -36,9 +38,27 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted successfully", formData);
-      alert("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setIsSending(true);
+      emailjs
+        .send(
+          "service_b9dx464", 
+          "template_m60jfvn",
+          formData,
+          "sKFgLmhhGvv9hSfST"
+        )
+        .then(
+          (response) => {
+            console.log("Email sent successfully", response);
+            alert("Message sent successfully!");
+            setFormData({ name: "", email: "", subject: "", message: "" });
+            setIsSending(false);
+          },
+          (error) => {
+            console.log("Failed to send email", error);
+            alert("Failed to send message. Please try again.");
+            setIsSending(false);
+          }
+        );
     }
   };
 
@@ -86,8 +106,11 @@ const Contact = () => {
                 {errors[field] && <p className="text-red-500 text-sm">{errors[field]}</p>}
               </div>
             ))}
-            <button className="w-full bg-yellow-500 text-white py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-300">
-              Send Message
+            <button
+              className="w-full bg-yellow-500 text-white py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-300"
+              disabled={isSending}
+            >
+              {isSending ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
@@ -98,7 +121,11 @@ const Contact = () => {
   {/* Address */}
   <div className="flex items-center space-x-4">
     <i className="fas fa-map-marker-alt text-yellow-500 text-2xl"></i>
-    <p className="text-gray-600">Malvoi, Tamil Nadu, India</p>
+    <p className="text-gray-600"> 📍 Sri Suyambu Bhoomipalagan Trust, <br />
+  No.2/65, Perumal Kovil Street, <br />
+  Thappai Kallukudi Vazhi, <br />
+  Lalgudi Taluk, Tiruchirapalli, <br />
+  Tamil Nadu, Pin Code - 621651</p>
   </div>
 
   {/* Phone */}
@@ -128,13 +155,14 @@ const Contact = () => {
     </h2>
 
     <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-      <iframe
-        title="Google Map"
-        className="w-full h-full border-0"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.342012345847!2d80.27071831474964!3d13.083890290779267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265980e1f0c33%3A0xf2c42eb6c1e68a3d!2sChennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sin!4v1628956456783"
-        allowFullScreen
-        loading="lazy"
-      ></iframe>
+    <iframe
+  title="Google Map"
+  className="w-full h-full border-0"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.8879447203844!2d78.9594519750458!3d11.04702738911864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baae7ff924378f5%3A0xc43b4b3c8c48e908!2sArulmigu%20Boomibalagan%20Temple!5e0!3m2!1sen!2sin!4v1741245439648!5m2!1sen!2sin"
+  allowFullScreen
+  loading="lazy"
+></iframe>
+
     </div>
   </div>
 </div>

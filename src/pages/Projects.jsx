@@ -117,23 +117,43 @@ import OurVision from './Ourvision';
 <OurVision />
 
            {/* Gallery Section */}
-           <div className="mt-12">
-            <h2 className="font-bold text-2xl text-center mb-6 text-gray-900">
-              Project Gallery
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
-              {images.map((image, index) => (
-                <div key={index} className="relative group overflow-hidden rounded-lg shadow-md">
-                  <img 
-                    src={image} 
-                    alt={`Gallery ${index + 1}`} 
-                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  
-                </div>
-              ))}
-            </div>
-          </div>
+           <div className="bg-gray-100 py-12 px-6 flex justify-center">
+      <div className="max-w-6xl flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-6">
+        {/* Image Gallery */}
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:w-1/2">
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Gallery ${index + 1}`}
+              className="rounded-lg shadow-md w-full h-40 object-cover"
+            />
+          ))}
+        </div>
+
+        {/* Text Content */}
+        <div className="md:w-1/2 px-6 flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-4">Project Gallery</h2>
+          <h3 className="text-xl font-semibold mb-2">
+            Preserving Heritage, Restoring Divinity
+          </h3>
+          <p className="text-gray-700 leading-relaxed">
+            At Sri Suyambu Boomibalan Trust, we take immense pride in our
+            mission to restore and revitalize sacred temples, ensuring their
+            spiritual and architectural legacy endures for generations.
+          </p>
+          <p className="text-gray-700 mt-2">
+            From structural repairs and deity installations to beautification
+            and Kumbabishekam rituals, these images capture the journey of
+            transformation, highlighting devotion and craftsmanship.
+          </p>
+          <p className="text-black font-bold mt-4">
+            Join us in witnessing this divine renewal and be a part of this
+            historic restoration journey!
+          </p>
+        </div>
+      </div>
+    </div>
 
         </div>
       </div>

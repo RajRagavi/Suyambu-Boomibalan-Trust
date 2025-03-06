@@ -32,8 +32,12 @@ const Footer = () => {
           {/* Contact & Socials */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold text-yellow-500">Contact Us</h3>
-            <p className="text-black text-sm mt-2">📍 Chennai, Tamil Nadu, India</p>
-            <p className="text-black text-sm mt-1">📞 <a href="tel:+919655667705" className="hover:text-yellow-500 transition">+91 96556 67705</a></p>
+            <p className="text-black text-sm mt-2"> 📍 Sri Suyambu Bhoomipalagan Trust, <br />
+  No.2/65, Perumal Kovil Street, <br />
+  Thappai Kallukudi Vazhi, <br />
+  Lalgudi Taluk, Tiruchirapalli, <br />
+  Tamil Nadu, Pin Code - 621651</p>
+            <p className="text-black text-sm mt-1">📞 <a href="tel:+91 96556 67705" className="hover:text-yellow-500 transition">+91 96556 67705</a></p>
             <p className="text-black text-sm mt-1">📧 <a href="mailto:info@suyambutrust.com" className="hover:text-yellow-500 transition">info@suyambutrust.com</a></p>
   
             {/* Social Icons */}

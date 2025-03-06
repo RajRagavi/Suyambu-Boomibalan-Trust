@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HandHeart, Landmark, Users, Music } from "lucide-react";
+import Logo from '../assets/images/SuyambuBoomibalanTrustLogo.png'
 
 import QRcode from '../assets/images/qr-code.jpeg';
 
@@ -8,6 +9,42 @@ function Donate() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+
+
+  const handleRazorpayPayment = () => {
+    const options = {
+      key: "rzp_live_9d5EVffCXntMaX", 
+      amount: 5000,
+      currency: "INR",
+      name: "Sri Suyambu Bhoomipalagan Trust",
+      description: "Temple Donation",
+      image: {Logo},
+      handler: function (response) {
+        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "Sri Suyambu Boombibalagan Trust",
+        email: "srisuyambuboomibalan@gmail.com",
+        contact: "+91 96556 67705",
+      },
+      notes: {
+        address: `Sri Suyambu Bhoomipalagan Trust,
+  No.2/65,
+  Perumal Kovil Street Thappai Kallukudi Vazhi,
+  Lalgudi Taluk,
+  Tiruchirapalli,
+  Tamil Nadu,
+  Pin Code - 621651`,
+      },
+      theme: {
+        color: "#FF9933",
+      },
+    };
+  
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
+  };
+  
 
   // Function to toggle form visibility
   const toggleForm = (type) => {
@@ -89,12 +126,13 @@ function Donate() {
           <p className="text-gray-700 mt-2">Help protect India’s sacred temples by making a contribution today.</p>
 
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              onClick={() => toggleForm("donate")}
-              className="px-6 py-3 rounded-md shadow-md font-semibold bg-[#FF9933] text-white"
-            >
-              Donate Now
-            </button>
+          <button
+  onClick={handleRazorpayPayment}
+  className="px-6 py-3 rounded-md shadow-md font-semibold bg-[#FF9933] text-white"
+>
+  Donate Now
+</button>
+
             <button
               onClick={() => toggleForm("volunteer")}
               className="px-6 py-3 rounded-md shadow-md font-semibold bg-blue-500 text-white hover:bg-blue-600"
