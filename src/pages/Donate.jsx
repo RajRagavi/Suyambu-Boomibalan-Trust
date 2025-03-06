@@ -10,11 +10,13 @@ function Donate() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
 
+  const [amount, setAmount] = useState("");
 
-  const handleRazorpayPayment = () => {
+
+  const handleRazorpayPayment = (amount) => {
     const options = {
       key: "rzp_live_9d5EVffCXntMaX", 
-      amount: 5000,
+      amount: amount * 100,
       currency: "INR",
       name: "Sri Suyambu Bhoomipalagan Trust",
       description: "Temple Donation",
@@ -60,10 +62,10 @@ function Donate() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`${formType} form submitted!`);
+    // alert(`${formType} form submitted!`);
+    handleRazorpayPayment(amount); // Trigger Razorpay with the amount entered
     setFormType(null); // Close form after submission
   };
-
   const reasons = [
     {
       title: "Receive Divine Blessings",
@@ -127,11 +129,11 @@ function Donate() {
 
           <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
           <button
-  onClick={handleRazorpayPayment}
-  className="px-6 py-3 rounded-md shadow-md font-semibold bg-[#FF9933] text-white"
->
-  Donate Now
-</button>
+            onClick={() => toggleForm("donate")}
+            className="px-6 py-3 rounded-md shadow-md font-semibold bg-[#FF9933] text-white"
+          >
+            Donate Now
+          </button>
 
             <button
               onClick={() => toggleForm("volunteer")}
@@ -169,19 +171,15 @@ function Donate() {
       {formType && (
         <div
           id="overlay"
-          className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50"
+          className="fixed inset-0 flex items-center justify-center bg-opacity-50 z-50"
           onClick={handleOverlayClick}
         >
-          <div className="relative w-96 h-auto border border-neutral rounded-lg bg-yellow-100 p-6 z-50">
+          <div className="relative w-96 h-auto border border-neutral rounded-lg bg-blue-200 p-6 z-50">
             <h2 className="font-extrabold text-2xl text-yellow-500 mb-2">
-              {formType === "donate"
-                ? "Make a Difference with Your Donation!"
-                : "Join Us as a Volunteer!"}
+              Make a Difference with Your Donation!
             </h2>
             <p className="text-black mb-4">
-              {formType === "donate"
-                ? "Support temple restoration and help preserve India's spiritual heritage."
-                : "Contribute your time and skills to make a meaningful impact."}
+              Support temple restoration and help preserve India's spiritual heritage.
             </p>
 
             {/* Form */}
@@ -210,6 +208,14 @@ function Donate() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              <input
+                type="number"
+                className="w-full p-2 border rounded-md mb-3"
+                placeholder="Amount..."
+                required
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
               <button
                 type="submit"
                 className="bg-blue-500 text-white p-2 w-full rounded-lg hover:bg-blue-600"
@@ -228,6 +234,7 @@ function Donate() {
           </div>
         </div>
       )}
+    
     </div>
   );
 }
