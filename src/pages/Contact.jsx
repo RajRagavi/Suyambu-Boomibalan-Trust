@@ -133,7 +133,7 @@ const Contact = () => {
     <i className="fas fa-phone-alt text-yellow-500 text-2xl"></i>
     <p className="text-gray-600">
       <a href="tel:+919655667705" className="hover:text-yellow-500 transition">
-        +91 96556 67705
+      📞 +91 96556 67705
       </a>
     </p>
   </div>
@@ -143,7 +143,7 @@ const Contact = () => {
     <i className="fas fa-envelope text-yellow-500 text-2xl"></i>
     <p className="text-gray-600">
       <a href="mailto:info@suyambutrust.com" className="hover:text-yellow-500 transition">
-        info@suyambutrust.com
+      📧 info@suyambutrust.com
       </a>
     </p>
   </div>

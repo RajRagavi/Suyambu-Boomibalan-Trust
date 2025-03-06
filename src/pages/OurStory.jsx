@@ -54,36 +54,36 @@ const OurStory = () => {
           <img
             src={Suyambu }
             alt="About Us"
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-lg h-[420px] rounded-lg shadow-lg"
           />
         </div>
       </div>
     </div>
 {/* our mission */}
-    <div className="flex flex-col md:flex-row-reverse items-center gap-6 mb-8 p-6">
-  <div className="md:w-1/2 p-4">
+<div className="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6 mb-4 md:mb-6 p-4 md:p-6">
+  <div className="md:w-1/2 p-2">
     <h3 className="text-3xl font-bold text-yellow-500">Our Mission</h3>
-    <div className="text-gray-800 text-justify p-3">
+    <div className="text-gray-800 text-justify">
       <p>
-        At <span className="font-bold">Sri Suyambu Boomibalan Trust</span>, our mission is rooted in <span className="text-yellow-500 font-semibold">Dharma Seva</span>—dedicated service to society through spiritual, cultural, and humanitarian initiatives. We strive to uplift communities while preserving our ancient traditions.
+        At <span className="font-bold">Sri Suyambu Boomibalan Trust</span>, our mission is rooted in 
+        <span className="text-yellow-500 font-semibold"> Dharma Seva</span>—dedicated service to society through spiritual, cultural, 
+        and humanitarian initiatives. We strive to uplift communities while preserving our ancient traditions.
       </p>
-      <p className="mt-2">
-        <span className="font-semibold">We Strive To:</span>
-      </p>
-      <div className="list-disc list-inside mt-2">
+      <p className="mt-1"><span className="font-semibold">We Strive To:</span></p>
+      <div className="list-disc list-inside mt-1">
         <p><span className="font-semibold">Restore and maintain historic temples</span> – Ensuring the preservation of sacred rituals and traditions.</p>
         <p><span className="font-semibold">Conduct religious services and spiritual programs</span> – Fostering devotion and cultural enrichment.</p>
         <p><span className="font-semibold">Provide education and scholarships</span> – Empowering underprivileged children with knowledge and opportunities.</p>
         <p><span className="font-semibold">Offer healthcare assistance</span> – Organizing free medical camps, health awareness programs, and essential medical support.</p>
         <p><span className="font-semibold">Engage in social welfare activities</span> – Distributing food, offering disaster relief, and running empowerment programs for rural communities.</p>
       </div>
-      <p className="mt-2">
+      <p className="mt-1">
         Every act of generosity, no matter how small—whether supporting temple renovations, providing meals, or contributing to community welfare—creates a lasting spiritual impact. Together, we can build a compassionate, spiritually enriched society.
       </p>
     </div>
   </div>
   <div className="md:w-1/2" data-aos="fade-right">
-    <img src={Trust} alt="Sri Suyambu Boomibalan Trust Mission" className="w-full h-auto rounded-lg shadow-lg" />
+    <img src={Trust} alt="Sri Suyambu Boomibalan Trust Mission" className="w-full h-[400px] rounded-lg shadow-lg" />
   </div>
 </div>
 
@@ -116,7 +116,7 @@ const OurStory = () => {
       <img
         src={Donate_trust}
         alt="Our Impact"
-        className="w-full h-auto rounded-lg shadow-lg"
+        className="w-lg h-[320px] rounded-lg shadow-lg items-center"
       />
     </div>
   </div>
@@ -148,41 +148,7 @@ const OurStory = () => {
       </div>
     </div>
 
-    {/* 2025 - Expanding Our Mission */}
-    <div className="flex flex-col md:flex-row items-center md:items-start" data-aos="fade-right">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2025</div>
-      <div className="ml-6 mt-4 md:mt-0 text-gray-700">
-        <h3 className="text-xl font-bold">Expanding Our Mission</h3>
-        <p className="mt-2">Launched charity programs, including food distribution, medical aid, and educational support for underprivileged communities.</p>
-      </div>
-    </div>
-
-    {/* 2025 - First Free Medical Camp */}
-    <div className="flex flex-col md:flex-row-reverse items-center md:items-start" data-aos="fade-left">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2025</div>
-      <div className="mr-6 mt-4 md:mt-0 text-gray-700 text-right md:text-left">
-        <h3 className="text-xl font-bold">First Free Medical Camp</h3>
-        <p className="mt-2">Organized a large-scale healthcare camp, offering free check-ups and treatments to hundreds of needy individuals.</p>
-      </div>
-    </div>
-
-    {/* 2025 - Educational Upliftment Begins */}
-    <div className="flex flex-col md:flex-row items-center md:items-start" data-aos="fade-right">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2025</div>
-      <div className="ml-6 mt-4 md:mt-0 text-gray-700">
-        <h3 className="text-xl font-bold">Educational Upliftment Begins</h3>
-        <p className="mt-2">Started scholarship programs and free tuition centers to empower young minds through education.</p>
-      </div>
-    </div>
-
-    {/* 2026 - Community Outreach Grows */}
-    <div className="flex flex-col md:flex-row-reverse items-center md:items-start" data-aos="fade-left">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2026</div>
-      <div className="mr-6 mt-4 md:mt-0 text-gray-700 text-right md:text-left">
-        <h3 className="text-xl font-bold">Community Outreach Grows</h3>
-        <p className="mt-2">Extended our charity work to rural areas, ensuring more people benefit from our seva programs.</p>
-      </div>
-    </div>
+    
 
     {/* 2026 - Spiritual & Cultural Renaissance */}
     <div className="flex flex-col md:flex-row items-center md:items-start" data-aos="fade-right">
@@ -193,23 +159,6 @@ const OurStory = () => {
       </div>
     </div>
 
-    {/* 2026 - Next Phase of Temple Restoration */}
-    <div className="flex flex-col md:flex-row-reverse items-center md:items-start" data-aos="fade-left">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2026</div>
-      <div className="mr-6 mt-4 md:mt-0 text-gray-700 text-right md:text-left">
-        <h3 className="text-xl font-bold">Next Phase of Temple Restoration</h3>
-        <p className="mt-2">Undertook multiple temple restoration projects to safeguard spiritual heritage for future generations.</p>
-      </div>
-    </div>
-
-    {/* 2026 - Women & Youth Empowerment Initiatives */}
-    <div className="flex flex-col md:flex-row items-center md:items-start" data-aos="fade-right">
-      <div className="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center rounded-full text-xl font-bold">2026</div>
-      <div className="ml-6 mt-4 md:mt-0 text-gray-700">
-        <h3 className="text-xl font-bold">Women & Youth Empowerment Initiatives</h3>
-        <p className="mt-2">Introduced skill development programs to create self-sufficiency and employment opportunities.</p>
-      </div>
-    </div>
   </div>
 </div>
 

@@ -1,6 +1,8 @@
-  import React, { useEffect, useState } from 'react';
-  import AOS from "aos";
-  import "aos/dist/aos.css";
+import React, { useEffect, useState } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
+  
+import { motion } from "framer-motion";
 
   import Boomibalagan_god from '../assets/images/Boomibalagan_god.jpg';
 
@@ -12,19 +14,18 @@ import Kovil from '../assets/images/kovil.jpg'
   // Importing Gallery Images
   import Project from '../assets/images/Project.jpeg';
   import Project_Boomibalagan from '../assets/images/Project_Boomibalagan.jpeg';
-  import Boomibalagan_trust_Temple from '../assets/images/Boomibalagan_trust_Temple.jpeg';
-  import Temple_trust from '../assets/images/Temple_trust.jpeg';
   import Temple_project from '../assets/images/Temple_project.jpeg';
+  import Charity_Project from '../assets/images/Charity_Project.jpeg';
   import Project_hindus from '../assets/images/Project_hindus.jpeg';
-  import Project_story from '../assets/images/Project_story.jpeg';
-  import Cultural_Project from '../assets/images/Cultural_Project.jpeg';
+  
  
   // import Project_donate from '../assets/images/Project_donate.jpeg';
   // import Temple_story from '../assets/images/Temple_story.jpeg';
   // import SuyambuBoomibalanTrustProject from '../assets/images/SuyambuBoomibalanTrustProject.jpeg';
 import OurVision from './Ourvision';
 
-  const images = [Project, Project_Boomibalagan, Boomibalagan_trust_Temple, Temple_trust, Temple_project, Project_hindus, Project_story,Cultural_Project,  ];
+  const images = [Project, Project_Boomibalagan, Project_hindus  ];
+  const images1 = [Temple_project, Charity_Project ];
 
   const Projects = () => {
     useEffect(() => {
@@ -120,7 +121,7 @@ import OurVision from './Ourvision';
            <div className="bg-gray-100 py-12 px-6 flex justify-center">
       <div className="max-w-6xl flex flex-col md:flex-row bg-white shadow-lg rounded-lg p-6">
         {/* Image Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:w-1/2">
+        {/* <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:w-1/2">
           {images.map((img, index) => (
             <img
               key={index}
@@ -129,7 +130,34 @@ import OurVision from './Ourvision';
               className="rounded-lg shadow-md w-full h-40 object-cover"
             />
           ))}
-        </div>
+        </div> */}
+
+        <div className="grid grid-cols-2 gap-4 md:w-1/2">
+  {/* 1st Column: 3 Landscape Images */}
+  <div className="flex flex-col gap-4">
+    {images.map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        alt={`Landscape ${index + 1}`}
+        className="rounded-lg shadow-md w-full h-[120px] object-cover"
+      />
+    ))}
+  </div>
+
+  {/* 2nd Column: 2 Portrait Images */}
+  <div className="flex flex-col gap-4">
+    {images1.map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        alt={`Portrait ${index + 1}`}
+        className="rounded-lg shadow-md w-full h-[190px] object-cover"
+      />
+    ))}
+  </div>
+</div>
+
 
         {/* Text Content */}
         <div className="md:w-1/2 px-6 flex flex-col justify-center">
@@ -151,8 +179,22 @@ import OurVision from './Ourvision';
             Join us in witnessing this divine renewal and be a part of this
             historic restoration journey!
           </p>
-        </div>
+
+      
+          <motion.button
+        type="submit"
+        className="shadow-xl text-lg bg-gray-900 text-white px-4 py-2 rounded-full border-2 hover:text-red-600 hover:bg-white transition-all m-15"
+        onClick={() => (window.location.href = "tel:+919655667705")}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 10 }}
+      >
+              Contact Us
+            </motion.button>  </div>
       </div>
+      
     </div>
 
         </div>
