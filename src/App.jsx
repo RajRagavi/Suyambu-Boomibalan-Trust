@@ -13,6 +13,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Projects from './pages/Projects'
 import Donate from './pages/Donate'
 
+import WhyProtectTemples from "./pages/WhyProtectTemples";
+import BenefitsofRenovatingTemples from "./pages/BenefitsofRenovatingTemples";
+import PreservingHindu from "./pages/PreservingHindu";
+import Kumbhabhishekam from "./pages/Kumbhabhishekam";
+
 function App() {
   
 
@@ -27,6 +32,11 @@ function App() {
         <Route path='/blogs' element={<Blogs/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/donate' element={<Donate/>}/>
+
+        <Route path="/temple-science/Why-Protect-Temples" element={<WhyProtectTemples />} />
+        <Route path="/temple-science/Benefits-of-Renovating-Temples" element={<BenefitsofRenovatingTemples/>}/>
+        <Route path="/temple-science/hindu-temples" element={<PreservingHindu />} />
+        <Route path="/temple-science/temple-kumhabhishekam" element={<Kumbhabhishekam />} />
       </Routes>
       <Footer />
     </Router>
